@@ -23,16 +23,8 @@ nav .input-group {
     }
 }
 
-.inputSearchRow {
-    @media screen and (max-width: 989px) {
-        flex-direction: column !important;
 
-        .advanced-search,
-        .dropdown {
-            max-width: 100% !important;
-        }
-    }
-}
+
 
 #ingredients {
     .advanced-search {
@@ -168,6 +160,91 @@ nav .input-group {
 }
 
 
+
+
+.card {
+    &-body {
+        &__heading {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            .card-title {
+                margin-right: 10px;
+            }
+
+            .cooktime {
+                display: flex;
+                justify-content: space-between;
+                font-weight: bold;
+                font-size: 1.25rem;
+                line-height: 1.2;
+                margin-bottom: .75rem;
+                min-width: fit-content;
+
+                .fa-clock {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    margin-right: 5px;
+                    scale: 1.1;
+                }
+
+                .time {
+                    display: flex;
+                    flex-wrap: nowrap;
+                }
+            }
+        }
+
+        &__text {
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+
+            .ingredient-list {
+                max-width: 60%;
+
+                ul {
+                    padding-left: 15px;
+
+                    li {
+                        list-style: none;
+                        display: flex;
+                        flex-wrap: nowrap;
+
+                        span {
+                            width: fit-content;
+                            word-wrap: none;
+                            overflow: visible;
+
+                            // margin-right: 5px;
+                            &:first-child {
+                                margin-right: 5px;
+                            }
+
+                            &:nth-child(2) {
+                                min-width: 20%;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .description {
+                max-width: 40%;
+                word-wrap: normal;
+
+
+            }
+
+        }
+    }
+}
 
 
 .card-img-top {

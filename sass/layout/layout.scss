@@ -1,0 +1,48 @@
+
+@media screen and (max-width: 989px) {
+    .inputSearchRow {
+        flex-direction: column !important;
+
+        .advanced-search {
+            margin-right: unset;
+            max-width: 98% !important;
+
+            &.active {
+                margin-right: unset;
+            }
+        }
+
+        .advanced-search,
+        .dropdown {
+            margin-right: unset;
+        }
+
+    }
+
+    .card-deck {
+        .card {
+            min-width: 40%;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-deck {
+        .card {
+            min-width: 90%;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+    }
+}
+@media screen and (min-width: 989px) {
+    .card-deck {
+        .card {
+            min-width: 30%;
+            max-width: 30%;
+            // margin: auto;
+            margin-bottom: 30px;
+        }
+    }
+}

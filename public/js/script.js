@@ -1,3 +1,6 @@
+import * as Search from "./controller/searchEngine.js";
+Search.initSearch()
+
 const $ = (element) => {
    let elementsFind = document.querySelectorAll(element);
    return elementsFind.length <= 1 ? elementsFind[0] : elementsFind;

@@ -10,6 +10,7 @@
 html {
     font-size: 100%;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 * {
@@ -19,4 +20,8 @@ html {
 h1 {
     font-family: 'DM Sans', sans-serif;
     color: #D04F4F;
+}
+
+.text-bolder {
+    font-weight: bold;
 }

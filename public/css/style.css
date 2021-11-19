@@ -35,16 +35,6 @@ nav .input-group-append span {
   height: 100%;
 }
 
-@media screen and (max-width: 989px) {
-  .inputSearchRow {
-    flex-direction: column !important;
-  }
-  .inputSearchRow .advanced-search,
-.inputSearchRow .dropdown {
-    max-width: 100% !important;
-  }
-}
-
 #ingredients .advanced-search__input input, #ingredients .advanced-search__input--icon {
   background-color: #3282F7;
   border-color: #3282F7;
@@ -156,15 +146,114 @@ nav .input-group-append span {
   padding: 5px;
 }
 
+.card-body__heading {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.card-body__heading .card-title {
+  margin-right: 10px;
+}
+.card-body__heading .cooktime {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  min-width: fit-content;
+}
+.card-body__heading .cooktime .fa-clock {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 5px;
+  scale: 1.1;
+}
+.card-body__heading .cooktime .time {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.card-body__text {
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.card-body__text .ingredient-list {
+  max-width: 60%;
+}
+.card-body__text .ingredient-list ul {
+  padding-left: 15px;
+}
+.card-body__text .ingredient-list ul li {
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.card-body__text .ingredient-list ul li span {
+  width: fit-content;
+  word-wrap: none;
+  overflow: visible;
+}
+.card-body__text .ingredient-list ul li span:first-child {
+  margin-right: 5px;
+}
+.card-body__text .ingredient-list ul li span:nth-child(2) {
+  min-width: 20%;
+}
+.card-body__text .description {
+  max-width: 40%;
+  word-wrap: normal;
+}
+
 .card-img-top {
   background-color: #C7BEBE;
   height: 170px;
   text-align: center;
 }
 
+@media screen and (max-width: 989px) {
+  .inputSearchRow {
+    flex-direction: column !important;
+  }
+  .inputSearchRow .advanced-search {
+    margin-right: unset;
+    max-width: 98% !important;
+  }
+  .inputSearchRow .advanced-search.active {
+    margin-right: unset;
+  }
+  .inputSearchRow .advanced-search,
+.inputSearchRow .dropdown {
+    margin-right: unset;
+  }
+
+  .card-deck .card {
+    min-width: 40%;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card-deck .card {
+    min-width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 989px) {
+  .card-deck .card {
+    min-width: 30%;
+    max-width: 30%;
+    margin-bottom: 30px;
+  }
+}
 html {
   font-size: 100%;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 * {
@@ -174,6 +263,10 @@ html {
 h1 {
   font-family: "DM Sans", sans-serif;
   color: #D04F4F;
+}
+
+.text-bolder {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */
