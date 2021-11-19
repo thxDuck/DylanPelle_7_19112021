@@ -1,0 +1,19 @@
+    @keyframes appear-animate {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes rotate_dropdown_btn {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(-180deg);
+      }
+    }

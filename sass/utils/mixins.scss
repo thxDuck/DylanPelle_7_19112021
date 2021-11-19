@@ -1,0 +1,32 @@
+@mixin inputText {
+  color: #FFF;
+
+  &:focus {
+    color: rgba(255, 255, 255, 0.8);
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &::placeholder {
+    color: #FFF;
+  }
+}
+
+
+%inputLikeButton {
+  color: #FFF;
+
+  &:focus {
+    color: rgba(255, 255, 255, 0.8);
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &::placeholder {
+    color: #FFF;
+  }
+}

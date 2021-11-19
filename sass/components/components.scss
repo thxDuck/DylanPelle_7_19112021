@@ -1,0 +1,177 @@
+nav .input-group {
+    border-radius: 5px;
+    margin-bottom: 40px;
+
+    input {
+        padding: 25px;
+        background-color: $bg-gray-light;
+        border-right: none;
+
+        &:focus {
+            background-color: $bg-gray-light;
+        }
+    }
+
+    &-append {
+        display: flex;
+
+        span {
+            background-color: $bg-gray-light;
+            margin: auto;
+            height: 100%;
+        }
+    }
+}
+
+.inputSearchRow {
+    @media screen and (max-width: 989px) {
+        flex-direction: column !important;
+
+        .advanced-search,
+        .dropdown {
+            max-width: 100% !important;
+        }
+    }
+}
+
+#ingredients {
+    .advanced-search {
+        &__input {
+
+            input,
+            &--icon {
+                background-color: $ingredient-bg;
+                border-color: $ingredient-bg;
+            }
+        }
+    }
+
+    .dropdown {
+        background-color: $ingredient-bg !important;
+    }
+}
+
+#appliance {
+    .advanced-search {
+        &__input {
+
+            input,
+            &--icon {
+                background-color: $appliance-bg;
+                border-color: $appliance-bg;
+            }
+        }
+    }
+
+    .dropdown {
+        background-color: $appliance-bg !important;
+    }
+}
+
+#ustensils {
+    .advanced-search {
+        &__input {
+
+            input,
+            &--icon {
+                background-color: $ustensils-bg;
+                border-color: $ustensils-bg;
+            }
+        }
+    }
+
+    .dropdown {
+        background-color: $ustensils-bg !important;
+    }
+}
+
+.advanced-search {
+    margin-right: 25px;
+    margin-bottom: 25px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s;
+
+    &__input {
+        display: flex;
+        justify-content: center;
+
+        input {
+            padding: 30px;
+            @include inputText;
+            display: flex;
+            justify-content: flex-start;
+            border-radius: 5px 0px 0px 5px;
+        }
+
+        &--icon {
+            @include inputText;
+            padding: 15px;
+            margin: 0px;
+            border-radius: 0px 5px 5px 0px;
+            cursor: pointer;
+        }
+    }
+
+    .dropdown {
+        display: none;
+        transition: all .3s;
+        background-color: #fff;
+
+        .fa-chevron-down {
+            animation: rotate_dropdown_btn 0.5s reverse forwards;
+        }
+
+        .dropdownList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-right: 15px;
+            animation: appear-animate .3s reverse;
+            transition: all .3s;
+
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+
+    &.active {
+        max-width: 45%;
+        margin-right: 25px;
+
+        .btn-toogle-dropdown {
+            display: none;
+        }
+
+        .fa-chevron-down.replyDropBox {
+            animation: rotate_dropdown_btn 0.5s forwards;
+        }
+
+        .dropdown {
+            display: block;
+            border-radius: 5px;
+
+            .dropdownList {
+                animation: appear-animate .3s;
+                opacity: 1;
+            }
+
+            a {
+                color: #FFF;
+                font-size: 85%;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+
+
+
+.card-img-top {
+    background-color: #C7BEBE;
+    height: 170px;
+    text-align: center;
+}

@@ -13,8 +13,8 @@ The strength of the site should be the fluidity of the search, as the site will 
 
 #### Dylan : 
 - __Structure__
-    - [ ] Create interface of website according to the mock-ups, make sure the website is responsive on mobile and desktop.
-    - [ ] Add javascript for dropdown menus
+    - [x] Create interface of website according to the mock-ups, make sure the website is responsive on mobile and desktop.
+    - [x] Add javascript for dropdown menus
     - [ ] Create animation for smooth display
     - [ ] No errors with W3C Validators (take screenshot)
 
