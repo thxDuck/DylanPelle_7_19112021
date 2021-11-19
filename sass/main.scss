@@ -1,0 +1,22 @@
+@import "utils/variables.scss";
+@import "utils/mixins.scss";
+@import "utils/placeholders.scss";
+@import "utils/animations.scss";
+@import "utils/functions.scss";
+
+@import "components/components.scss";
+@import "layout/layout.scss";
+
+html {
+    font-size: 100%;
+    padding-top: 50px;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    color: #D04F4F;
+}

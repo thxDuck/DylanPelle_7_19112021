@@ -1,0 +1,23 @@
+{
+  "name": "dylanpelle_7_19112021",
+  "version": "1.0.0",
+  "description": "It is a company that has created many cookbooks, that wishes to realize its own website.<br>\r The strength of the site should be the fluidity of the search, as the site will have a very large number of recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thxDuck/DylanPelle_7_19112021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thxDuck/DylanPelle_7_19112021/issues"
+  },
+  "homepage": "https://github.com/thxDuck/DylanPelle_7_19112021#readme",
+  "dependencies": {
+    "sass": "^1.43.4"
+  }
+}
