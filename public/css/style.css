@@ -35,11 +35,11 @@ nav .input-group-append span {
   height: 100%;
 }
 
-#ingredients .advanced-search__input input, #ingredients .advanced-search__input--icon {
+#ingredient .advanced-search__input input, #ingredient .advanced-search__input--icon {
   background-color: #3282F7;
   border-color: #3282F7;
 }
-#ingredients .dropdown {
+#ingredient .dropdown {
   background-color: #3282F7 !important;
 }
 
@@ -121,6 +121,8 @@ nav .input-group-append span {
 }
 .advanced-search .dropdown .dropdownList li {
   list-style-type: none;
+  width: 33%;
+  overflow: hidden;
 }
 .advanced-search.active {
   max-width: 45%;
@@ -207,6 +209,24 @@ nav .input-group-append span {
 .card-body__text .description {
   max-width: 40%;
   word-wrap: normal;
+}
+
+.tags {
+  margin-bottom: 15px;
+}
+.tags .tag {
+  list-style-type: none;
+  color: #FFF;
+  border-radius: 5px;
+  padding: 15px;
+  margin-right: 10px;
+}
+.tags .tag--ingredient {
+  background-color: #3282F7;
+}
+.tags .tag i {
+  font-size: 1.2rem;
+  margin-left: 10px;
 }
 
 .card-img-top {

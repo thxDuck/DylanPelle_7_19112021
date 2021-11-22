@@ -26,7 +26,7 @@ nav .input-group {
 
 
 
-#ingredients {
+#ingredient {
     .advanced-search {
         &__input {
 
@@ -125,6 +125,8 @@ nav .input-group {
 
             li {
                 list-style-type: none;
+                width: 33%;
+                overflow: hidden;
             }
         }
     }
@@ -242,6 +244,31 @@ nav .input-group {
 
             }
 
+        }
+    }
+}
+
+
+
+
+.tags {
+    margin-bottom: 15px;
+
+    .tag {
+        list-style-type: none;
+        color: #FFF;
+
+        border-radius: 5px;
+        padding: 15px;
+        margin-right: 10px;
+
+        &--ingredient {
+            background-color: $ingredient-bg;
+        }
+
+        i {
+            font-size: 1.2rem;
+            margin-left: 10px;
         }
     }
 }
