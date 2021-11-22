@@ -1,15 +1,10 @@
+import { U } from "./utilities/utils.js"
 import * as Search from "./controller/searchEngine.js";
 Search.initSearch()
 
-const $ = (element) => {
-   let elementsFind = document.querySelectorAll(element);
-   return elementsFind.length <= 1 ? elementsFind[0] : elementsFind;
-}
-
-const GLOBAL_INPUT = $('#global-search');
-const ADVANCED_INPUT = $('#global-search');
-const TRIGGER_DROPDOWN = $('.activeOnClick');
+const TRIGGER_DROPDOWN = U.get('.activeOnClick');
 let activeDropdown = null;
+
 for (let i = 0; i < TRIGGER_DROPDOWN.length; i++) {
    const el = TRIGGER_DROPDOWN[i];
    el.addEventListener("click", (e) => {

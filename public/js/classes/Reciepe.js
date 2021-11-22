@@ -9,7 +9,7 @@ export default class Reciepe {
 		this.appliance = appliance;
 		this.ustensils = ustensils;
 	}
-	
+
 	getUnit(unit = "") {
 		if (!unit) return unit
 		switch (unit) {
@@ -27,7 +27,7 @@ export default class Reciepe {
 		if (description.length > 130) {
 			preview = description.slice(0, 130);
 			let lastWordIndex = preview.lastIndexOf(" ");
-			if (preview[lastWordIndex -1] === ",") lastWordIndex -= 1;
+			if (preview[lastWordIndex - 1] === ",") lastWordIndex -= 1;
 			if (lastWordIndex) {
 				preview = preview.slice(0, lastWordIndex) + "...";
 			}
@@ -47,26 +47,26 @@ export default class Reciepe {
 				ingredientList += '<li><span class="text-bolder">' + ingredient + ':</span><span>' + quantity + ' ' + units + '</span></li>';
 			}
 		}
-		let content =
-			'<div class="card">' +
-			'	<img class="card-img-top" src="" alt=" "> ' +
-			'	<div class="card-body container"> ' +
-			'		<div class="row card-body__heading"> ' +
-			'			<h5 class="card-title">' + this.name + '</h5> ' +
-			'			<span class="cooktime"><i class="far fa-clock"></i><span class="time">' + this.getTime() + ' min</span> ' +
-			'		</div> ' +
-			'		<div class="row card-body__text"> ' +
-			'			<div class="ingredient-list"> ' +
-			'				<ul class="card-text"> ' +
-			'					' + ingredientList + ' ' +
-			'				</ul> ' +
-			'			</div> ' +
-			'			<div class="description"> ' +
-			'				<p class="card-text">' + this.getDescritpionPreview() + '</p> ' +
-			'			</div> ' +
-			'		</div> ' +
-			'	</div> ' +
-			'</div>';
+		let content = `
+			<div class="card" data-id="${this.getId()}">
+				<img class="card-img-top" src="" alt=" "> 
+				<div class="card-body container"> 
+					<div class="row card-body__heading"> 
+						<h5 class="card-title">${this.name}</h5> 
+						<span class="cooktime"><i class="far fa-clock"></i><span class="time">${this.getTime()} min</span> 
+					</div> 
+					<div class="row card-body__text"> 
+						<div class="ingredient-list"> 
+							<ul class="card-text"> 
+								${ingredientList} 
+							</ul> 
+						</div> 
+						<div class="description"> 
+							<p class="card-text">${this.getDescritpionPreview()}</p> 
+						</div> 
+					</div> 
+				</div> 
+			</div>`;
 		let result = stringToHTML(content)
 		return result
 		function stringToHTML(str) {
@@ -79,13 +79,16 @@ export default class Reciepe {
 
 	// GETTERS
 	getName() {
-		return this.name.toString()
+		return this.name.toString();
+	}
+	getId() {
+		return this.id.toString();
 	}
 	getTime() {
 		return this.time.toString()
-	}	
+	}
 	getServings() {
 		return this.servings.toString()
-	}	
+	}
 
 }
