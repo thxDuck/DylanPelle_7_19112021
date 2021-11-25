@@ -1,4 +1,4 @@
-export default class Reciepe {
+export default class Recipe {
 	constructor(id, name, servings, ingredients, time, description, appliance, ustensils) {
 		this.id = id;
 		this.name = name;

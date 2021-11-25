@@ -1,63 +1,104 @@
 export { initSearch }
 
 import { U } from "../utilities/utils.js";
-import Reciepe from "../classes/Reciepe.js";
+import Recipe from "../classes/Recipe.js";
 import Tag from "../classes/Tag.js";
-import Reciepes from "../model/Recipes.js";
+import Recipes from "../model/Recipes.js";
 
 
 const GLOBAL_INPUT = U.get('#global-search');
 const ADVANCED_INPUT = U.get('#global-search');
 let ALLTAGS = [];
 let TAGS_SELECTED = [];
-let RECIEPES_DISPLAYED = [];
+let RECIPES_DISPLAYED = [];
 
 const initSearch = () => {
-    // console.time("reciep loop");
-    let datas = Reciepes.initPage();
+    // console.time("recipe loop");
+    let datas = Recipes.initPage();
     U.empty('#recipe-list');
-    U.hide('#noReciepes');
-    // GLOBAL_INPUT.addEventListener('click', globalSearch)
+    U.hide('#noRecipe');
+    GLOBAL_INPUT.addEventListener('input', globalSearch)
     for (let i = 0; i < 6; i++) {
-        let reciepe = new Reciepe(datas[i].id, datas[i].name, datas[i].servings, datas[i].ingredients, datas[i].time, datas[i].description, datas[i].appliance, datas[i].ustensils);
-        displayReciepe(reciepe);
+        let recipe = new Recipe(datas[i].id, datas[i].name, datas[i].servings, datas[i].ingredients, datas[i].time, datas[i].description, datas[i].appliance, datas[i].ustensils);
+        displayRecipe(recipe);
     }
     initTags();
-    // console.timeEnd("reciep loop");
+    // console.timeEnd("recipe loop");
 }
 
 
 
 // ******************
-// *    Reciepes
+// *    Search
 // ******************
 
-const displayReciepe = (reciep) => {
-    if (reciep instanceof Reciepe) U.get('#recipe-list').append(reciep.createCard());
-    let reciepInDOM = U.get('.card[data-id="' + reciep.id + '"]');
-    RECIEPES_DISPLAYED.push(reciep);
-    displayNoReciepeMessage(false)
-    reciepInDOM.addEventListener("click", (e) => {
-        removeReciepe(reciep.id);
+const globalSearch = () => {
+    console.time('Search function !')
+    let search = GLOBAL_INPUT.value;
+    search = search.toLowerCase().trim();
+    if (search.length < 3) return false;
+    let recipesFind = Recipes.globalSearching(search);
+    U.empty('#recipe-list');
+    if (!!recipesFind) {
+        if (recipesFind.byName.length > 0) {
+            for (let i = 0; i < recipesFind.byName.length; i++) {
+                let recipeData = recipesFind.byName[i];
+                let recipe = new Recipe(recipeData.id, recipeData.name, recipeData.servings, recipeData.ingredients, recipeData.time, recipeData.description, recipeData.appliance, recipeData.ustensils);
+                displayRecipe(recipe);
+            }
+        }
+        if (recipesFind.byIngredients.length > 0) {
+            for (let i = 0; i < recipesFind.byIngredients.length; i++) {
+                let recipeData = recipesFind.byIngredients[i];
+                let recipe = new Recipe(recipeData.id, recipeData.name, recipeData.servings, recipeData.ingredients, recipeData.time, recipeData.description, recipeData.appliance, recipeData.ustensils);
+                displayRecipe(recipe);
+            }
+        }
+        if (recipesFind.byDescription.length > 0) {
+            for (let i = 0; i < recipesFind.byDescription.length; i++) {
+                let recipeData = recipesFind.byDescription[i];
+                let recipe = new Recipe(recipeData.id, recipeData.name, recipeData.servings, recipeData.ingredients, recipeData.time, recipeData.description, recipeData.appliance, recipeData.ustensils);
+                displayRecipe(recipe);
+            }
+        }
+    } else {
+        displayNoRecipeMessage(true);
+    }
+    
+    console.timeEnd('Search function !')
+};
+
+
+// ******************
+// *    Recipes
+// ******************
+
+const displayRecipe = (recipe) => {
+    if (recipe instanceof Recipe) U.get('#recipe-list').append(recipe.createCard());
+    let domRecipe = U.get('.card[data-id="' + recipe.id + '"]');
+    RECIPES_DISPLAYED.push(recipe);
+    displayNoRecipeMessage(false)
+    domRecipe.addEventListener("click", (e) => {
+        logRecipeDesc(recipe.id);
     });
 };
-const removeReciepe = (id) => {
+
+
+
+const logRecipeDesc = (id) => {
     id = parseInt(id);
     if (!isNaN(id)) {
-        let reciepe = U.get('.card[data-id="' + id + '"]');
-        if (!!reciepe) {
-            reciepe.remove();
-            let reciepObject = findReciepById(id);
-            RECIEPES_DISPLAYED.splice(RECIEPES_DISPLAYED.indexOf(reciepObject), 1);
-            if (RECIEPES_DISPLAYED.length <= 0) displayNoReciepeMessage(true)
+        let recipe =findRecipeById(id)
+        if (!!recipe) {
+           console.log(recipe);
         }
     }
 };
 
-const findReciepById = (id) => {
-    if (!id || RECIEPES_DISPLAYED.length <= 0) return false;
-    for (let i = 0; i < RECIEPES_DISPLAYED.length; i++) {
-        if (RECIEPES_DISPLAYED[i].id === id) return RECIEPES_DISPLAYED[i];
+const findRecipeById = (id) => {
+    if (!id || RECIPES_DISPLAYED.length <= 0) return false;
+    for (let i = 0; i < RECIPES_DISPLAYED.length; i++) {
+        if (RECIPES_DISPLAYED[i].id === id) return RECIPES_DISPLAYED[i];
     }
     return false;
 }
@@ -71,7 +112,7 @@ const findReciepById = (id) => {
 // ******************
 
 const initTags = () => {
-    let allTags = Reciepes.getAllTags();
+    let allTags = Recipes.getAllTags();
     if (allTags.ingredients.length > 0) {
         for (let i = 0; i < 30; i++) {
             let tag = new Tag(allTags.ingredients[i].name, allTags.ingredients[i].type);
@@ -116,7 +157,7 @@ const filterWithTag = (tagName, type) => {
         removeFilterTag(tagName, type)
     });
     TAGS_SELECTED.push(tag)
-    // TODO : ACTUALIZE RECIEPE LIST !
+    // TODO : ACTUALIZE RECIPE LIST !
 }
 
 const removeFilterTag = (tagName, type) => {
@@ -129,7 +170,7 @@ const removeFilterTag = (tagName, type) => {
 
     displayTag(tag);
     TAGS_SELECTED.splice(TAGS_SELECTED.indexOf(tag), 1)
-    // TODO : ACTUALIZE RECIEPE LIST !
+    // TODO : ACTUALIZE RECIPE LIST !
 }
 
 const findTagByName = (name, type) => {
@@ -149,7 +190,7 @@ const findTagByName = (name, type) => {
 // *  UTILITIES
 // ******************
 
-const displayNoReciepeMessage = (display = true) => {
-    if (display) U.show('#noReciepes');
-    if (!display) U.hide('#noReciepes');
+const displayNoRecipeMessage = (display = true) => {
+    if (display) U.show('#noRecipe');
+    if (!display) U.hide('#noRecipe');
 }
