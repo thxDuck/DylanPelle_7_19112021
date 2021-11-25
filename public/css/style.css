@@ -42,6 +42,10 @@ nav .input-group-append span {
 #ingredient .dropdown {
   background-color: #3282F7 !important;
 }
+#ingredient .dropdown .dropdownList a:hover,
+#ingredient .dropdown .dropdownList a:focus {
+  color: #0751bc;
+}
 
 #appliance .advanced-search__input input, #appliance .advanced-search__input--icon {
   background-color: #68D9A4;
@@ -50,6 +54,10 @@ nav .input-group-append span {
 #appliance .dropdown {
   background-color: #68D9A4 !important;
 }
+#appliance .dropdown .dropdownList a:hover,
+#appliance .dropdown .dropdownList a:focus {
+  color: #2caf72;
+}
 
 #ustensils .advanced-search__input input, #ustensils .advanced-search__input--icon {
   background-color: #ED6454;
@@ -57,6 +65,10 @@ nav .input-group-append span {
 }
 #ustensils .dropdown {
   background-color: #ED6454 !important;
+}
+#ustensils .dropdown .dropdownList a:hover,
+#ustensils .dropdown .dropdownList a:focus {
+  color: #c62715;
 }
 
 .advanced-search {
@@ -146,6 +158,11 @@ nav .input-group-append span {
   color: #FFF;
   font-size: 85%;
   padding: 5px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.advanced-search.active .dropdown a:hover, .advanced-search.active .dropdown a:focus {
+  font-weight: bold;
 }
 
 .card-body__heading {
@@ -194,6 +211,8 @@ nav .input-group-append span {
   list-style: none;
   display: flex;
   flex-wrap: nowrap;
+  opacity: 1;
+  transition: opacity 1.3s;
 }
 .card-body__text .ingredient-list ul li span {
   width: fit-content;
@@ -220,13 +239,26 @@ nav .input-group-append span {
   border-radius: 5px;
   padding: 15px;
   margin-right: 10px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
 }
 .tags .tag--ingredient {
   background-color: #3282F7;
 }
+.tags .tag--appliance {
+  background-color: #68D9A4;
+}
+.tags .tag--ustensils {
+  background-color: #ED6454;
+}
 .tags .tag i {
   font-size: 1.2rem;
   margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tags .tag i :hover {
+  transform: scale(1.1);
 }
 
 .card-img-top {

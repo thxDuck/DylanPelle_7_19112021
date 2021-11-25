@@ -1,11 +1,11 @@
 export default class Tag {
 	constructor(name, type) {
-		this.name = name;
+		this.name = name.toLowerCase();
 		this.type = type;
 	}
 	
 	createTagSelected() {
-		let content = `<span class="tag tag--${this.type}">${this.name}<i class="far fa-times-circle"></i></span>`;
+		let content = `<span class="tag tag--${this.type}">${this.name}<i class="far fa-times-circle filter-tag" data-name="${this.name}"  data-type="${this.type}"></i></span>`;
 		let result = stringToHTML(content)
 		return result;
 
@@ -16,9 +16,8 @@ export default class Tag {
 		};
 	}
 
-
 	createTagList() {
-		let content = `<li><a class="dropdown-item" href="#" value="${this.name}">${this.name}</a></li>`;
+		let content = `<li><a class="dropdown-item" href="#" value="${this.name}" data-type="${this.type}">${this.name}</a></li>`;
 		let result = stringToHTML(content);
 		return result;
 
@@ -28,6 +27,5 @@ export default class Tag {
 			return html.body.firstChild;
 		};
 	}
-
 
 }

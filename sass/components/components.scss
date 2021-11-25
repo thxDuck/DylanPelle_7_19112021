@@ -40,6 +40,11 @@ nav .input-group {
 
     .dropdown {
         background-color: $ingredient-bg !important;
+
+        .dropdownList a:hover,
+        .dropdownList a:focus {
+            color: darken($color: $ingredient-bg, $amount: 20);
+        }
     }
 }
 
@@ -57,6 +62,11 @@ nav .input-group {
 
     .dropdown {
         background-color: $appliance-bg !important;
+
+        .dropdownList a:hover,
+        .dropdownList a:focus {
+            color: darken($color: $appliance-bg, $amount: 20);
+        }
     }
 }
 
@@ -74,6 +84,11 @@ nav .input-group {
 
     .dropdown {
         background-color: $ustensils-bg !important;
+
+        .dropdownList a:hover,
+        .dropdownList a:focus {
+            color: darken($color: $ustensils-bg, $amount: 20);
+        }
     }
 }
 
@@ -150,12 +165,20 @@ nav .input-group {
             .dropdownList {
                 animation: appear-animate .3s;
                 opacity: 1;
+
             }
 
             a {
                 color: #FFF;
                 font-size: 85%;
                 padding: 5px;
+                border-radius: 5px;
+                text-transform: capitalize;
+
+                &:hover,
+                &:focus {
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -217,6 +240,8 @@ nav .input-group {
                         list-style: none;
                         display: flex;
                         flex-wrap: nowrap;
+                        opacity: 1;
+                        transition: opacity 1.3s;
 
                         span {
                             width: fit-content;
@@ -261,14 +286,29 @@ nav .input-group {
         border-radius: 5px;
         padding: 15px;
         margin-right: 10px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
 
         &--ingredient {
             background-color: $ingredient-bg;
         }
 
+        &--appliance {
+            background-color: $appliance-bg;
+        }
+
+        &--ustensils {
+            background-color: $ustensils-bg;
+        }
+
         i {
             font-size: 1.2rem;
             margin-left: 10px;
+            cursor: pointer;
+            transition: all .3s;
+            :hover {
+                transform: scale(1.1);
+            }
         }
     }
 }

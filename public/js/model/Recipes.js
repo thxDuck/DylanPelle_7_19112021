@@ -17,7 +17,7 @@ export default class Reciepes {
     static getAllIngredients() {
         return modelData.findAllIngredients();
     }
-    static getAllAppliances () {
+    static getAllAppliances() {
         return modelData.findAllAppliances();
     }
     static getAllUstensils() {
@@ -26,13 +26,13 @@ export default class Reciepes {
     static findGlobal() {
 
     }
-    static searchWithIds(reciepeIds) {
+    static getByIds(reciepeIds) {
 
     }
     static getAll() {
         return ReciepesDatas;
     }
-    static findByTags(type, search) {
+    static getByTags(type, search) {
         return ReciepesDatas;
     }
 

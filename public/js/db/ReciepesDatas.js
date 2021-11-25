@@ -1728,7 +1728,6 @@ const DATAS = [
 export default class modelData {
 
     static findAll() {
-        let result = [];
         return DATAS;
     }
     static findAllIngredients() {
@@ -1737,14 +1736,17 @@ export default class modelData {
         for (let i = 0; i < DATAS.length; i++) {
             if (!!DATAS[i].ingredients && DATAS[i].ingredients.length > 0) {
                 for (let j = 0; j < DATAS[i].ingredients.length; j++) {
-                    if (inResult.indexOf(DATAS[i].ingredients[j].ingredient) === -1) {
+                    if (inResult.indexOf(DATAS[i].ingredients[j].ingredient.toLowerCase()) === -1) {
 
                         result.push({
                             type: "ingredient",
-                            name: DATAS[i].ingredients[j].ingredient,
+                            name: DATAS[i].ingredients[j].ingredient.toLowerCase(),
                         })
-                        inResult.push(DATAS[i].ingredients[j].ingredient);
-                    } else continue;
+                        inResult.push(DATAS[i].ingredients[j].ingredient.toLowerCase());
+
+                    } else {
+                        continue;
+                    }
                 }
             } else {
                 continue;
@@ -1759,13 +1761,15 @@ export default class modelData {
         let inResult = [];
         for (let i = 0; i < DATAS.length; i++) {
             if (!!DATAS[i].appliance) {
-                if (inResult.indexOf(DATAS[i].appliance) === -1) {
+                if (inResult.indexOf(DATAS[i].appliance.toLowerCase()) === -1) {
                     result.push({
                         type: "appliance",
-                        name: DATAS[i].appliance,
+                        name: DATAS[i].appliance.toLowerCase(),
                     });
-                    inResult.push(DATAS[i].appliance)
-                } else continue;
+                    inResult.push(DATAS[i].appliance.toLowerCase())
+                } else {
+                    continue;
+                }
             } else {
                 continue;
             }
@@ -1780,12 +1784,12 @@ export default class modelData {
         for (let i = 0; i < DATAS.length; i++) {
             if (!!DATAS[i].ustensils && DATAS[i].ustensils.length > 0) {
                 for (let j = 0; j < DATAS[i].ustensils.length; j++) {
-                    if (inResult.indexOf(DATAS[i].ustensils[j]) === -1) {
+                    if (inResult.indexOf(DATAS[i].ustensils[j].toLowerCase()) === -1) {
                         result.push({
                             type: "ustensils",
-                            name: DATAS[i].ustensils[j],
+                            name: DATAS[i].ustensils[j].toLowerCase(),
                         })
-                        inResult.push(DATAS[i].ustensils[j])
+                        inResult.push(DATAS[i].ustensils[j].toLowerCase())
                     } else {
                         continue;
                     }
@@ -1796,9 +1800,5 @@ export default class modelData {
         }
         return result;
     }
-
-
-
-
 
 }
