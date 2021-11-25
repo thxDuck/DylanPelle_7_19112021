@@ -45,14 +45,12 @@
         </nav>
 
         <section class="container searchByElements">
-            <div class="row">
-                <ul class="tags">
-                </ul>
+            <div class="row tags">
             </div>
 
             <div class="row inputSearchRow">
 
-                <div class="advanced-search activeOnClick" id="ingredients">
+                <div class="advanced-search activeOnClick" id="ingredient">
                     <span class="advanced-search__input btn-toogle-dropdown">
                         <input type="text" class="form-control advanced-search__input--btn" name="advanced-search-ingredient" data-type="ingredient" value="" placeholder="Ingrédients" aria-label="Ingrédients">
                         <span class="advanced-search__input--icon icon"><i class="fa fa-chevron-down"></i></span>
@@ -62,7 +60,7 @@
                             <input type="text" class="form-control advanced-search__input--btn" placeholder="Ingrédients" aria-label="Ingrédients">
                             <span class="advanced-search__input--icon replyDropBox"><i class="fa fa-chevron-down replyDropBox"></i></span>
                         </span>
-                        <ul class="dropdownList">
+                        <ul class="dropdownList tags-selectable">
                         </ul>
                     </div>
                 </div>
@@ -77,7 +75,7 @@
                             <input type="text" class="form-control advanced-search__input--btn" placeholder="Appareils" aria-label="Appareils">
                             <span class="advanced-search__input--icon replyDropBox"><i class="fa fa-chevron-down replyDropBox"></i></span>
                         </span>
-                        <ul class="dropdownList">
+                        <ul class="dropdownList tags-selectable">
                         </ul>
                     </div>
                 </div>
@@ -92,7 +90,7 @@
                             <input type="text" class="form-control advanced-search__input--btn" placeholder="Ustensiles" aria-label="Ustensiles">
                             <span class="advanced-search__input--icon replyDropBox"><i class="fa fa-chevron-down replyDropBox"></i></span>
                         </span>
-                        <ul class="dropdownList">
+                        <ul class="dropdownList tags-selectable">
                         </ul>
                     </div>
                 </div>
@@ -105,14 +103,14 @@
             </div>
 
             <div id="noReciepes">
-                <div class="alert alert-info mx-auto" role="alert">Aucune recette ne correspond à votre recherche, essayez de généraliser votre recherche<br><small>par exemple, essayez "Salade saumon" au lieu de "Salade de légume au saumon et tomates"</small></div>
+                <div class="alert alert-info mx-auto" role="alert">
+                    Aucune recette ne correspond à votre critère...<br>
+                    Vous pouvez chercher « tarte aux pommes », « poisson », etc...
+                </div>
             </div>
 
 
         </section>
-
-
-
     </main>
 
 

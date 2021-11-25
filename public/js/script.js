@@ -15,7 +15,7 @@ for (let i = 0; i < TRIGGER_DROPDOWN.length; i++) {
          }
       } else {
          if (!!activeDropdown) {
-            activeDropdown = $('.active');
+            activeDropdown = U.get('.active');
             activeDropdown.classList.remove("active")
          }
          el.classList.add("active")
