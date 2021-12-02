@@ -11,14 +11,20 @@ export default class Recipe {
 	}
 
 	getUnit(unit = "") {
-		if (!unit) return unit
+		if (!unit) return unit;
 		switch (unit) {
-			case "grammes": return "g"
-			case "cuillères à soupe": return "c. à s";
-			case "cuillère à soupe": return "c. à s";
-			case "cuillères à café": return "c. à s";
-			case "cuillère à café": return "c. à s";
-			default: return unit
+			case "grammes":
+				return "g";
+			case "cuillères à soupe":
+				return "c. à s";
+			case "cuillère à soupe":
+				return "c. à s";
+			case "cuillères à café":
+				return "c. à s";
+			case "cuillère à café":
+				return "c. à s";
+			default:
+				return unit;
 		}
 	}
 	getDescritpionPreview() {
@@ -44,7 +50,7 @@ export default class Recipe {
 				let ingredient = ingredientDatas[i].ingredient;
 				let quantity = !!ingredientDatas[i].quantity ? ingredientDatas[i].quantity.toString() : "";
 				let units = !!ingredientDatas[i].quantity ? this.getUnit(ingredientDatas[i].unit) : "";
-				ingredientList += '<li><span class="text-bolder">' + ingredient + ':</span><span>' + quantity + ' ' + units + '</span></li>';
+				ingredientList += '<li><span class="text-bolder">' + ingredient + ":</span><span>" + quantity + " " + units + "</span></li>";
 			}
 		}
 		let content = `
@@ -67,15 +73,14 @@ export default class Recipe {
 					</div> 
 				</div> 
 			</div>`;
-		let result = stringToHTML(content)
-		return result
+		let result = stringToHTML(content);
+		return result;
 		function stringToHTML(str) {
 			let parser = new DOMParser();
-			let html = parser.parseFromString(str, 'text/html');
+			let html = parser.parseFromString(str, "text/html");
 			return html.body.firstChild;
-		};
+		}
 	}
-
 
 	// GETTERS
 	getName() {
@@ -85,10 +90,9 @@ export default class Recipe {
 		return this.id.toString();
 	}
 	getTime() {
-		return this.time.toString()
+		return this.time.toString();
 	}
 	getServings() {
-		return this.servings.toString()
+		return this.servings.toString();
 	}
-
 }
