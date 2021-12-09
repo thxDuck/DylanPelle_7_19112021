@@ -65,8 +65,7 @@ const DATAS = [
 			},
 		],
 		time: 60,
-		description:
-			"Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron cette fois ci dans un Saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur vous pouver ajouter 1 à 2 cuillères à soupe de Crème de coco",
+		description: "Découper le thon en dés, mettre dans un plat et recouvrir de jus de citron vert (mieux vaut prendre un plat large et peu profond). Laisser reposer au réfrigérateur au moins 2 heures. (Si possible faites-le le soir pour le lendemain. Après avoir laissé mariner le poisson, coupez le concombre en fines rondelles sans la peau et les tomates en prenant soin de retirer les pépins. Rayer la carotte. Ajouter les légumes au poissons avec le citron cette fois ci dans un Saladier. Ajouter le lait de coco. Pour ajouter un peu plus de saveur vous pouver ajouter 1 à 2 cuillères à soupe de Crème de coco",
 		appliance: "Saladier",
 		ustensils: ["presse citron"],
 	},
@@ -104,8 +103,7 @@ const DATAS = [
 			},
 		],
 		time: 80,
-		description:
-			"Découper le poulet en morceaux, les faire dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, le lait de coco ainsi que le poivron et l'oignon découpés en morceaux. Laisser cuisiner 30 minutes de plus. Servir avec du riz",
+		description: "Découper le poulet en morceaux, les faire dorer dans une cocotte avec de l'huile d'olive. Salez et poivrez. Une fois doré, laisser cuire en ajoutant de l'eau. Au bout de 30 minutes, ajouter le coulis de tomate, le lait de coco ainsi que le poivron et l'oignon découpés en morceaux. Laisser cuisiner 30 minutes de plus. Servir avec du riz",
 		appliance: "Cocotte",
 		ustensils: ["couteau"],
 	},
@@ -183,8 +181,7 @@ const DATAS = [
 			},
 		],
 		time: 45,
-		description:
-			"Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraiche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
+		description: "Etaler la pâte feuilleté aux dimensions du moule, étaler la moutarde sur la pâte feuilleté, ajouter le thon. Découper les tomates en rondelles et les poser sur le poisson, ajouter un peu de crème fraiche sur toute la tarte et recouvrez de gruyère râpé. Cuire au four 30 minutes",
 		appliance: "Four",
 		ustensils: ["moule à tarte", "râpe à fromage", "couteau"],
 	},
@@ -222,8 +219,7 @@ const DATAS = [
 			},
 		],
 		time: 50,
-		description:
-			"Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
+		description: "Commencez par mélanger les oeufs le sucre et le sucre vanillé dans un saladier, découper les pommes en tranches, ajouter la crème fraiche aux oeufs. Une fois que tout est pret, étalez la tarte dans le moule. N'oubliez pas de piquer le fond avec une fourchette avant depositionner les pommes sur la tarte. Finallement verser la préparation à base d'oeufs et de crême fraiche. Laisser cuire au four pendant 30 minutes",
 		appliance: "Four",
 		ustensils: ["moule à tarte", "saladier", "fourchette"],
 	},
@@ -257,8 +253,7 @@ const DATAS = [
 			},
 		],
 		time: 50,
-		description:
-			"Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
+		description: "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
 		appliance: "Four",
 		ustensils: ["moule à tartelettes (6)", "casserolle"],
 	},
@@ -298,8 +293,7 @@ const DATAS = [
 			},
 		],
 		time: 60,
-		description:
-			"Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
+		description: "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
 		appliance: "Four",
 		ustensils: ["moule à gateaux", "casserolle"],
 	},
@@ -366,8 +360,7 @@ const DATAS = [
 			},
 		],
 		time: 60,
-		description:
-			"Commencer par cuire les pommes de terre dans l'eau bouillante. Puis epluchez les et coupez les en rondelles. Emincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre gout ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le rebelochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
+		description: "Commencer par cuire les pommes de terre dans l'eau bouillante. Puis epluchez les et coupez les en rondelles. Emincer les oignons puis les faire dorer dans du beurre. Ajouter le jambon fumé coupé en en morceaux ainsi que les pommes de terres. Salez, poivrez à votre gout ( et celui de vos convives ) Laissez cuisiner durant environ 10 minutes puis ajouter le vin blanc. Après 5 minutes, mettre le tout dans un plat à gratin. Coupez le rebelochon, soit en tranches, soit le couper en 2 dans le sens de l'épaisseur et recouvrir les pommes de terre. Cuire au four (environ 220°) durant 25 minutes. C'est prêt !",
 		appliance: "Four",
 		ustensils: ["plat à gratin", "couteau", "Économe"],
 	},
@@ -509,8 +502,7 @@ const DATAS = [
 			},
 		],
 		time: 100,
-		description:
-			"Mélanger la farine et les oeufs, faire fondre 25 grammes de beurre et ajouter à la pâte. Ajouter du sel. Laisser reposer 1 heure. Faire les galettes et laisser refroidire. Faire chauffer les saucisses avec du beurre et l'oignon. Enrouler les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par dessus les crêpes. Passer four pendant 20 minutes",
+		description: "Mélanger la farine et les oeufs, faire fondre 25 grammes de beurre et ajouter à la pâte. Ajouter du sel. Laisser reposer 1 heure. Faire les galettes et laisser refroidire. Faire chauffer les saucisses avec du beurre et l'oignon. Enrouler les saucisses dans les crêpes avec une partie du fromage. Mettre le reste du fromage à raclette par dessus les crêpes. Passer four pendant 20 minutes",
 		appliance: "Four",
 		ustensils: ["poelle à frire", "couteau"],
 	},
@@ -549,8 +541,7 @@ const DATAS = [
 			},
 		],
 		time: 60,
-		description:
-			"Mélangez dans un saladier, la farine, les oeufs, et le lait. Battez jusqu'à avoir une masse homogène. Pendant ce temps faites fondre le beurre et ajoutez en une partie à la pâte à crêpes. Faire fondre le chocolat ( avec le reste du beurre salé ). Lorsque vous chauffez les crêpes. Ajouter le chocolat fondu et les bananes coupées en rondelles. Ajoutez une touche de chantilly pour les gourmands",
+		description: "Mélangez dans un saladier, la farine, les oeufs, et le lait. Battez jusqu'à avoir une masse homogène. Pendant ce temps faites fondre le beurre et ajoutez en une partie à la pâte à crêpes. Faire fondre le chocolat ( avec le reste du beurre salé ). Lorsque vous chauffez les crêpes. Ajouter le chocolat fondu et les bananes coupées en rondelles. Ajoutez une touche de chantilly pour les gourmands",
 		appliance: "Poële à crêpe",
 		ustensils: ["saladier", "louche", "cuillère en bois"],
 	},
@@ -586,8 +577,7 @@ const DATAS = [
 			},
 		],
 		time: 45,
-		description:
-			"Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
+		description: "Faire cuire les pâtes si vous n'avez pas de pennes des coquillettes peuvent faire l'affaire. Découper les tomates en petits morceaux, soit en tranches soit en dés. Coupez le basilic en petites morceaux et mélangez le aux tomates.  Coupez la mozzarella en tranche. Préchauffez le four à 200°. Alternez entre couches de pattes et couches de tomates, terminez par une couche de pates et recouvrir du fromage. Laisser au four 30 minutes et régalez vous ! Une recette simple qui fera plaisir au petits comme aux grands.",
 		appliance: "Four",
 		ustensils: ["plat à gratin", "couteau", "râpe à fromage"],
 	},
@@ -619,8 +609,7 @@ const DATAS = [
 			},
 		],
 		time: 15,
-		description:
-			"Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter un cuillière à soupe de juste de citron ainsi que les glaçons. Ajoutez quelques fueilles de menthe pour plus de fraicheur. Mixez le tout. Servir et déguster.",
+		description: "Coupez les fraises en morceaux, découpez la chaire de la pastèque en retirant les pépins. Mettre le tout dans le blender. Ajouter un cuillière à soupe de juste de citron ainsi que les glaçons. Ajoutez quelques fueilles de menthe pour plus de fraicheur. Mixez le tout. Servir et déguster.",
 		appliance: "Blender",
 		ustensils: ["verres", "couteau", "presse citron"],
 	},
@@ -714,8 +703,7 @@ const DATAS = [
 			},
 		],
 		time: 30,
-		description:
-			"Faire cuire les pates comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crême fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
+		description: "Faire cuire les pates comme indiqué sur le paquet. Dorer les lardons dans une sauteuse avec l'huile d'olive. Ajouter la crême fraiche et baisser le feu au minimum. Quand les Tagliatelles sont prêtes les mettre dans la sauteuse et bien mélanger le tout en ajoutant le jaune d'oeuf. Servir et ajouter le parmesan râpé.",
 		appliance: "Sauteuse",
 		ustensils: ["râpe à fromage", "cuillère en bois"],
 	},
@@ -755,8 +743,7 @@ const DATAS = [
 			},
 		],
 		time: 30,
-		description:
-			"Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
+		description: "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
 		appliance: "Casserolle.",
 		ustensils: ["Cuillère en bois", "louche", "couteau"],
 	},
@@ -791,8 +778,7 @@ const DATAS = [
 			},
 		],
 		time: 30,
-		description:
-			"Faire fondre le chocolat et le beurre au bain marie. Dans un saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crême dessert.",
+		description: "Faire fondre le chocolat et le beurre au bain marie. Dans un saladier battre les oeufs avec le sucre jusqu'à obtenir une texture de type mousse. Ajouter la farine ainsi que le mélange de beurre et chocolat fondu. Beurrez le moule à gateaux. Mettre au four préchauffé à 200° puis faites chauffer pendant 15 minutes. C'est prêt. Servir avec une boule de glace ou une crême dessert.",
 		appliance: "Four",
 		ustensils: ["moule à gateaux", "fouet", "casserolle"],
 	},
@@ -832,8 +818,7 @@ const DATAS = [
 			},
 		],
 		time: 60,
-		description:
-			"Etaler la pate dans un moule et la piquer.Parsemer de beurre. Faire chauffer les lardon dans une poêle. Battre les oeufs en ajoutant la crème fraîche et le lait. Finalement ajouter les lardons, salez poivrez à votre gout. Verser l'ensemble sur la pâte. Cuire environ 50 minutes.",
+		description: "Etaler la pate dans un moule et la piquer.Parsemer de beurre. Faire chauffer les lardon dans une poêle. Battre les oeufs en ajoutant la crème fraîche et le lait. Finalement ajouter les lardons, salez poivrez à votre gout. Verser l'ensemble sur la pâte. Cuire environ 50 minutes.",
 		appliance: "Four",
 		ustensils: ["moule à gateaux", "rouleau à patisserie", "fouet"],
 	},
@@ -907,8 +892,7 @@ const DATAS = [
 			},
 		],
 		time: 30,
-		description:
-			"Faire fondre le beurre et le mélanger avec le sucre. Finalement ajouter l'oeuf. Ajouter la farine tout en mélangeant peu pa peu pour avoir une masse sans grumaux. Ajouter les pépites de chocolat. Faire, une plaque de cuisson de petites boules pour les cookies. Mettre au four à 180° pour 10 minutes.",
+		description: "Faire fondre le beurre et le mélanger avec le sucre. Finalement ajouter l'oeuf. Ajouter la farine tout en mélangeant peu pa peu pour avoir une masse sans grumaux. Ajouter les pépites de chocolat. Faire, une plaque de cuisson de petites boules pour les cookies. Mettre au four à 180° pour 10 minutes.",
 		appliance: "Four",
 		ustensils: ["fouet", "saladier", "plaque de cuisson"],
 	},
@@ -1008,8 +992,7 @@ const DATAS = [
 			},
 		],
 		time: 80,
-		description:
-			"Emincer les blanc de poireaux et les faire chauffer dans 25 grammes de beurre. AJouter les pommes de terres coupées en morceaux. Ajouter l'eau et laisser mijoter pour 45 minutes. Chauffer l'oseille avec le beurre restant puis incorporer le tout. Mixez. Ajoutez la crème. Bon appetit.",
+		description: "Emincer les blanc de poireaux et les faire chauffer dans 25 grammes de beurre. AJouter les pommes de terres coupées en morceaux. Ajouter l'eau et laisser mijoter pour 45 minutes. Chauffer l'oseille avec le beurre restant puis incorporer le tout. Mixez. Ajoutez la crème. Bon appetit.",
 		appliance: "Mixer",
 		ustensils: ["casserolle", "couteau"],
 	},
@@ -1140,8 +1123,7 @@ const DATAS = [
 			},
 		],
 		time: 20,
-		description:
-			"Beurrer les tranches de pain, ajouter entre 2 tranches de pain de mie 1 tranche d'émental, une de blanc de dinde, et une autre d'emmental. Dans un récipient, mélanger le gruyère rappé avec le lait et la noix de muscade. Mettre sur les croque monsieux. Placer au four durnat 10 minutes.",
+		description: "Beurrer les tranches de pain, ajouter entre 2 tranches de pain de mie 1 tranche d'émental, une de blanc de dinde, et une autre d'emmental. Dans un récipient, mélanger le gruyère rappé avec le lait et la noix de muscade. Mettre sur les croque monsieux. Placer au four durnat 10 minutes.",
 		appliance: "Four",
 		ustensils: ["râpe à fromage", "cuillère à Soupe", "couteau"],
 	},
@@ -1282,8 +1264,7 @@ const DATAS = [
 			},
 		],
 		time: 35,
-		description:
-			"Raper les courgette et les faire revenir durant 15 minutes. Ajouter les fromages de chèvre frais. Préparer la béchamelle avec le lait et la maizena. Salez poivrez, ajouter de la noix de muscade selon les gouts. Dans un plat, mettre un peu de sauces au fond, puis des lasagnes, puis des courgettes etc... terminer par de la sauces et ajouter le gruiyère. Passer au four à 180° durant 20 à 25 minutes.",
+		description: "Raper les courgette et les faire revenir durant 15 minutes. Ajouter les fromages de chèvre frais. Préparer la béchamelle avec le lait et la maizena. Salez poivrez, ajouter de la noix de muscade selon les gouts. Dans un plat, mettre un peu de sauces au fond, puis des lasagnes, puis des courgettes etc... terminer par de la sauces et ajouter le gruiyère. Passer au four à 180° durant 20 à 25 minutes.",
 		appliance: "Four",
 		ustensils: ["plat à gratin", "râpe à fromage", "fouet"],
 	},
@@ -1322,8 +1303,7 @@ const DATAS = [
 			},
 		],
 		time: 60,
-		description:
-			"Couper les courgettes dans le sens de la longueur. Vider les courgette dans un saladier. Réserver.Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomates. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé",
+		description: "Couper les courgettes dans le sens de la longueur. Vider les courgette dans un saladier. Réserver.Faire revenir la chair des courgettes dans 25cl d'huile d'olive. Ajouter l'oignon puis la viande hachée. Mettre la farce dans les courgettes. Ajouter le coulis de tomates. Mettre au four pendant 30 minutes. Avant la fin de la cuisson ajouter le fromage rapé",
 		appliance: "Four",
 		ustensils: ["couteau", "cuillère en bois", "Poelle à frire"],
 	},
@@ -1438,8 +1418,7 @@ const DATAS = [
 			},
 		],
 		time: 20,
-		description:
-			"Séparer les blancs d'oeufs. Faire fondre le chocolat au bain marie. Ajouter les jaunes et le sucre au chocolat hors du feu. Battre les blancs en neige. Ajouter les blancs au mélange de chocolat. Mélangez délicatement avec une spatule. Servir dans un plat ou dans des verres. Mettre au frais",
+		description: "Séparer les blancs d'oeufs. Faire fondre le chocolat au bain marie. Ajouter les jaunes et le sucre au chocolat hors du feu. Battre les blancs en neige. Ajouter les blancs au mélange de chocolat. Mélangez délicatement avec une spatule. Servir dans un plat ou dans des verres. Mettre au frais",
 		appliance: "Casserolle",
 		ustensils: ["fouet", "spatule", "verres"],
 	},
@@ -1786,8 +1765,7 @@ const DATAS = [
 			},
 		],
 		time: 60,
-		description:
-			"Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
+		description: "Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
 		appliance: "Four",
 		ustensils: ["moule à gateaux", "casserolle"],
 	},
@@ -1800,67 +1778,57 @@ export default class modelData {
 	static findAllIngredients() {
 		let result = [];
 		let inResult = [];
-		for (let i = 0; i < DATAS.length; i++) {
-			if (!!DATAS[i].ingredients && DATAS[i].ingredients.length > 0) {
-				for (let j = 0; j < DATAS[i].ingredients.length; j++) {
-					if (inResult.indexOf(DATAS[i].ingredients[j].ingredient.toLowerCase()) === -1) {
+
+		DATAS.forEach(data => {
+			if (!!data.ingredients && data.ingredients.length > 0) {
+				data.ingredients.forEach(ingredient => {
+					if (inResult.indexOf(ingredient.ingredient.toLowerCase()) === -1) {
 						result.push({
 							type: "ingredient",
-							name: DATAS[i].ingredients[j].ingredient.toLowerCase(),
+							name: ingredient.ingredient.toLowerCase(),
 						});
-						inResult.push(DATAS[i].ingredients[j].ingredient.toLowerCase());
-					} else {
-						continue;
+						inResult.push(ingredient.ingredient.toLowerCase());
 					}
-				}
-			} else {
-				continue;
+				});
 			}
-		}
+		});
+
 		return result;
 	}
 
 	static findAllAppliances() {
 		let result = [];
 		let inResult = [];
-		for (let i = 0; i < DATAS.length; i++) {
-			if (!!DATAS[i].appliance) {
-				if (inResult.indexOf(DATAS[i].appliance.toLowerCase()) === -1) {
+		DATAS.forEach(data => {
+			if (!!data.appliance) {
+				if (inResult.indexOf(data.appliance.toLowerCase()) === -1) {
 					result.push({
 						type: "appliance",
-						name: DATAS[i].appliance.toLowerCase(),
+						name: data.appliance.toLowerCase(),
 					});
-					inResult.push(DATAS[i].appliance.toLowerCase());
-				} else {
-					continue;
+					inResult.push(data.appliance.toLowerCase());
 				}
-			} else {
-				continue;
 			}
-		}
+		});
 		return result;
 	}
 
 	static findAllUstensils() {
 		let result = [];
 		let inResult = [];
-		for (let i = 0; i < DATAS.length; i++) {
-			if (!!DATAS[i].ustensils && DATAS[i].ustensils.length > 0) {
-				for (let j = 0; j < DATAS[i].ustensils.length; j++) {
-					if (inResult.indexOf(DATAS[i].ustensils[j].toLowerCase()) === -1) {
+		DATAS.forEach(data => {
+			if (!!data.ustensils && data.ustensils.length > 0) {
+				data.ustensils.forEach(ustensil => {
+					if (inResult.indexOf(ustensil.toLowerCase()) === -1) {
 						result.push({
 							type: "ustensil",
-							name: DATAS[i].ustensils[j].toLowerCase(),
+							name: ustensil.toLowerCase(),
 						});
-						inResult.push(DATAS[i].ustensils[j].toLowerCase());
-					} else {
-						continue;
+						inResult.push(ustensil.toLowerCase());
 					}
-				}
-			} else {
-				continue;
+				});
 			}
-		}
+		});
 		return result;
 	}
 }

@@ -13,6 +13,7 @@ export default class Recipe {
 
 	static globalSearching(search) {
 		if (!search || search.length < 3) return [];
+		search = search.toLowerCase();
 		let result = {
 			byName: [],
 			byIngredients: [],
@@ -21,10 +22,8 @@ export default class Recipe {
 		let words = search.split(" ");
 		let recipes = modelData.findAll();
 		let nb = 0;
-
-		for (let i = 0; i < recipes.length; i++) {
+		recipes.forEach((recipe) => {
 			nb++;
-			let recipe = recipes[i];
 			const name = recipe.name.toLowerCase();
 			const description = recipe.description.toLowerCase();
 			const ingredients = recipe.ingredients;
@@ -36,43 +35,43 @@ export default class Recipe {
 
 			let inName = true;
 			let inIngredients = true;
-			for (let w = 0; w < words.length; w++) {
-				const word = words[w];
-
+			let lastWord = words[words.length - 1]
+			words.forEach((word) => {
 				if (inName && name.indexOf(word) > -1) {
 					nbWordFindInName++;
 					if (nbWordFindInName === words.length) {
+						recipe.pushed = true;
 						result.byName.push(recipe);
-						break;
+						return
 					}
 				} else {
 					inName = false;
 				}
 
-				if (inIngredients && !!ingredients && ingredients.length > 0) {
-					for (let ing = 0; ing < ingredients.length; ing++) {
-						const ingredient = ingredients[ing].ingredient;
-						if (ingredient.indexOf(word) > -1) {
+				if (!recipe.pushed && inIngredients && !!ingredients && ingredients.length > 0) {
+					ingredients.forEach(ingredient => {
+						const ingredientName = ingredient.ingredient;
+						if (ingredientName.indexOf(word) > -1) {
 							nbWordFindInIngredients++;
-							break;
+							return
 						}
-					}
+					});
 					if (nbWordFindInIngredients === 0) inIngredients = false;
-					if (w === words.length && nbWordFindInIngredients === words.length) {
+					if (word === lastWord && nbWordFindInIngredients === words.length) {
 						result.byIngredients.push(recipe);
+						recipe.pushed = true;
 					}
 				}
-			}
 
-			if (!inName && !inIngredients && description.indexOf(search) > -1) {
+			});
+			if (!recipe.pushed && description.indexOf(search) > -1) {
 				nbWordFindInDescription++;
 				let occurences = 0;
 				occurences = description.split(search).length - 1;
 				recipe.occurences = occurences;
 				result.byDescription.push(recipe);
 			}
-		}
-
+		});
 		if (result.byDescription.length > 0) {
 			result.byDescription.sort((a, b) => {
 				let occA = a.occurences,
@@ -82,7 +81,7 @@ export default class Recipe {
 				return 0;
 			});
 		}
-		if (result.byName.length > 0 && result.byDescription.length > 0 && result.byIngredients.length > 0) result = null;
+		if (result.byName.length === 0 && result.byDescription.length === 0 && result.byIngredients.length === 0) result = null;
 		return result;
 	}
 }

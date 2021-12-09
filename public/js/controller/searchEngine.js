@@ -57,31 +57,28 @@ const globalSearch = () => {
 	RECIPES_HISTORY = [];
 	if (!!recipesFind) {
 		if (recipesFind.byName.length > 0) {
-			for (let i = 0; i < recipesFind.byName.length; i++) {
-				let recipeData = recipesFind.byName[i];
+			recipesFind.byName.forEach(recipeData => {
 				let recipe = new Recipe(recipeData.id, recipeData.name, recipeData.servings, recipeData.ingredients, recipeData.time, recipeData.description, recipeData.appliance, recipeData.ustensils);
 				displayRecipe(recipe);
 				nbRecipe++;
 				RECIPES_HISTORY.push(recipe);
-			}
+			});
 		}
 		if (recipesFind.byIngredients.length > 0) {
-			for (let i = 0; i < recipesFind.byIngredients.length; i++) {
-				let recipeData = recipesFind.byIngredients[i];
+			recipesFind.byIngredients.forEach(recipeData => {
 				let recipe = new Recipe(recipeData.id, recipeData.name, recipeData.servings, recipeData.ingredients, recipeData.time, recipeData.description, recipeData.appliance, recipeData.ustensils);
 				displayRecipe(recipe);
 				nbRecipe++;
 				RECIPES_HISTORY.push(recipe);
-			}
+			});
 		}
 		if (recipesFind.byDescription.length > 0) {
-			for (let i = 0; i < recipesFind.byDescription.length; i++) {
-				let recipeData = recipesFind.byDescription[i];
+			recipesFind.byDescription.forEach(recipeData => {
 				let recipe = new Recipe(recipeData.id, recipeData.name, recipeData.servings, recipeData.ingredients, recipeData.time, recipeData.description, recipeData.appliance, recipeData.ustensils);
 				displayRecipe(recipe);
 				nbRecipe++;
 				RECIPES_HISTORY.push(recipe);
-			}
+			});
 		}
 		if (nbRecipe === 0) {
 			displayNoRecipeMessage(true);
@@ -104,35 +101,26 @@ const searchInTags = (valueSearch, tagType) => {
 	}
 	U.empty("#" + tagType + " .dropdownList");
 	if (!!ALLTAGS[tagType] && ALLTAGS[tagType].length > 0) {
-		for (let i = 0; i < ALLTAGS[tagType].length; i++) {
-			let tag = ALLTAGS[tagType][i];
-			if (tag.type != tagType) continue;
-
+		ALLTAGS[tagType].forEach(tag => {
+			if (tag.type != tagType) return
 			let nbOccurences = 0;
-			for (let s = 0; s < valueSearch.split(" ").length; s++) {
-				const wordSearch = valueSearch.split(" ")[s];
+
+			valueSearch.split(" ").forEach(wordSearch => {
 				let splitedTagName = tag.name.split(" ");
-				for (let j = 0; j < splitedTagName.length; j++) {
-					const wordName = splitedTagName[j];
+				splitedTagName.forEach(wordName => {
 					if (wordSearch.length >= 1 && wordSearch.length < 3) {
 						if (wordName.slice(0, wordSearch.length) === wordSearch) {
 							nbOccurences++;
-							continue;
-						} else {
-							continue;
 						}
 					} else if (wordSearch.length >= 3) {
 						if (wordName.indexOf(wordSearch) > -1) {
 							nbOccurences++;
-							continue;
-						} else {
-							continue;
 						}
 					}
-				}
+				});
 				if (nbOccurences === valueSearch.split(" ").length) displayTag(tag);
-			}
-		}
+			});
+		});
 	}
 };
 
@@ -164,49 +152,43 @@ const updateRecipeListWithTag = () => {
 		U.empty("#recipe-list");
 		let recipesFind = [];
 		if (!!TAGS_SELECTED && TAGS_SELECTED.length > 0) {
-			for (let i = 0; i < RECIPES_HISTORY.length; i++) {
-				const recipe = RECIPES_HISTORY[i];
-				if (!recipe) break;
+			RECIPES_HISTORY.forEach(recipe => {
+
+				if (!recipe) return;
 				let nbTagFound = 0;
 
-				for (let t = 0; t < TAGS_SELECTED.length; t++) {
-					const tag = TAGS_SELECTED[t];
-
+				TAGS_SELECTED.forEach(tag => {
 					if (tag.type == "ingredient") {
 						if (!!recipe.ingredients && recipe.ingredients.length > 0) {
-							for (let j = 0; j < recipe.ingredients.length; j++) {
-								const ingredient = recipe.ingredients[j].ingredient.toLowerCase();
+							recipe.ingredients.forEach(ingredients => {
+								const ingredient = ingredients.ingredient.toLowerCase();
 								if (ingredient.indexOf(tag.name) > -1) {
 									nbTagFound++;
-									break;
+									return;
 								}
-							}
+							});
 						}
-						continue;
 					} else if (tag.type == "ustensil") {
 						if (!!recipe.ustensils && recipe.ustensils.length > 0) {
-							for (let j = 0; j < recipe.ustensils.length; j++) {
-								const ustensil = recipe.ustensils[j].toLowerCase();
+							recipe.ustensils.forEach(ustensil => {
 								if (ustensil === tag.name) {
 									nbTagFound++;
-									break;
+									return;
 								}
-							}
+							});
 						}
-						continue;
 					} else if (tag.type == "appliance") {
 						if (recipe.appliance.toLowerCase() === tag.name) {
 							nbTagFound++;
 						}
-						continue;
 					} else {
-						break;
+						return;
 					}
-				}
+				});
 				if (nbTagFound === TAGS_SELECTED.length) {
 					recipesFind.push(recipe);
 				}
-			}
+			});
 		} else {
 			if (!U.get("#global-search").value) {
 				initTags();
@@ -218,9 +200,7 @@ const updateRecipeListWithTag = () => {
 
 		if (recipesFind.length > 0) {
 			RECIPES_DISPLAYED = [];
-			for (let i = 0; i < recipesFind.length; i++) {
-				displayRecipe(recipesFind[i]);
-			}
+			recipesFind.map(recipesFind => displayRecipe(recipesFind));
 			updateTags();
 		} else {
 			displayNoRecipeMessage(true);
@@ -242,10 +222,8 @@ const logRecipeDescription = (id) => {
 
 const findRecipeById = (id) => {
 	if (!id || RECIPES_DISPLAYED.length <= 0) return false;
-	for (let i = 0; i < RECIPES_DISPLAYED.length; i++) {
-		if (RECIPES_DISPLAYED[i].id === id) return RECIPES_DISPLAYED[i];
-	}
-	return false;
+	return RECIPES_DISPLAYED.find(r => r.id === id);
+
 };
 
 // ******************
@@ -255,15 +233,11 @@ const findRecipeById = (id) => {
 const initTags = () => {
 	ALLTAGS = Recipes.getAllTags();
 	updateTags();
-	initTagInputEvent();
+
 };
 
 const resetTags = () => {
-	let tagListes = U.get(".tags-selectable");
-	for (let i = 0; i < tagListes.length; i++) {
-		let list = tagListes[i];
-		list.innerHTML = "";
-	}
+	U.get(".tags-selectable").forEach(list => { list.innerHTML = "" });
 };
 
 const updateTags = () => {
@@ -272,44 +246,51 @@ const updateTags = () => {
 		let presentIngredients = [];
 		let presentAppliances = [];
 		let presentUstensils = [];
-		for (let i = 0; i < RECIPES_DISPLAYED.length; i++) {
-			const recipe = RECIPES_DISPLAYED[i];
+		RECIPES_DISPLAYED.forEach(recipe => {
 			if (!!recipe.appliance && presentAppliances.indexOf(recipe.appliance.toLowerCase()) === -1) {
 				if (!isTagSelected(recipe.appliance, "appliance")) {
 					presentAppliances.push(recipe.appliance.toLowerCase());
-					displayTag(findTagByName(recipe.appliance.toLowerCase(), "appliance"));
+					let tag = findTagByName(recipe.appliance.toLowerCase(), "appliance")
+					if (!!tag) {
+						displayTag(tag);
+					}
 				}
 			}
 
 			if (!!recipe.ingredients && recipe.ingredients.length > 0) {
-				for (let j = 0; j < recipe.ingredients.length; j++) {
-					const ingredientName = recipe.ingredients[j].ingredient.toLowerCase();
+				recipe.ingredients.forEach(ingredients => {
+					const ingredientName = ingredients.ingredient.toLowerCase();
 					if (presentIngredients.indexOf(ingredientName) === -1) {
 						if (!isTagSelected(ingredientName, "ingredient")) {
 							presentIngredients.push(ingredientName);
-							displayTag(findTagByName(ingredientName, "ingredient"));
+							let tag = findTagByName(ingredientName, "ingredient")
+							if (!!tag) {
+								displayTag(tag);
+							}
 						}
 					}
-				}
+				});
 			}
 			if (!!recipe.ustensils && recipe.ustensils.length > 0) {
-				for (let j = 0; j < recipe.ustensils.length; j++) {
-					const ustensilName = recipe.ustensils[j].toLowerCase();
+				recipe.ustensils.forEach(ustensilName => {
+					ustensilName = ustensilName.toLowerCase()
 					if (presentUstensils.indexOf(ustensilName) === -1) {
 						if (!isTagSelected(ustensilName, "ustensil")) {
 							presentUstensils.push(ustensilName);
-							displayTag(findTagByName(ustensilName, "ustensil"));
+							let tag = findTagByName(ustensilName, "ustensil")
+							if (!!tag) {
+								displayTag(tag);
+							}
 						}
 					}
-				}
+				});
 			}
-		}
-		let tagListes = U.get(".tags-selectable");
-		for (let i = 0; i < tagListes.length; i++) {
-			if (!tagListes[i].innerHTML) {
-				tagListes[i].innerHTML = `<li><a class="text-danger text-bold">Aucun element a aficher !</a></li>`;
-			}
-		}
+		});
+
+
+		initTagInputEvent();
+	} else {
+		U.get(".tags-selectable").forEach(tagList => { tagList.innerHTML = `<li><a class="text-danger text-bold">Aucun element a aficher !</a></li>`; });
 	}
 };
 
@@ -319,11 +300,10 @@ const isTagSelected = (tagName, tagType) => {
 };
 
 const displayTag = (tag) => {
-	tag = new Tag(tag.name, tag.type);
+	tag = new Tag(tag.name.toLowerCase(), tag.type);
 	U.get("#" + tag.type + " .tags-selectable").append(tag.createTagList());
+
 	let tagInDom = U.get('[value="' + tag.name + '"][data-type="' + tag.type + '"]');
-	if (!tagInDom) {
-	}
 	tagInDom.addEventListener("click", () => {
 		filterWithTag(tag.name, tag.type);
 	});
@@ -357,22 +337,19 @@ const removeFilterTag = (tagName, type) => {
 
 const findTagByName = (name, type) => {
 	if (!name || ALLTAGS[type].length <= 0) return false;
-	for (let i = 0; i < ALLTAGS[type].length; i++) {
-		if (ALLTAGS[type][i].name === name && ALLTAGS[type][i].type === type) return new Tag(name, type);
-	}
-	return false;
+	name = name.toLowerCase()
+	return !!ALLTAGS[type].find(t => (t.name === name && t.type === type)) ? new Tag(name, type) : false;
 };
 
 const initTagInputEvent = () => {
 	let inputs = U.get(".input-tag");
-	for (let i = 0; i < inputs.length; i++) {
-		let tagInput = inputs[i];
+	inputs.forEach(tagInput => {
 		tagInput.addEventListener("input", (e) => {
 			let tagType = e.target.dataset.type;
 			let valueSearch = e.target.value.toLowerCase().trim();
 			searchInTags(valueSearch, tagType);
 		});
-	}
+	});
 };
 
 // ******************
@@ -382,6 +359,7 @@ const initTagInputEvent = () => {
 const displayNoRecipeMessage = (display = true) => {
 	if (display) {
 		U.show("#noRecipe");
+		resetTags()
 	} else {
 		U.hide("#noRecipe");
 	}
