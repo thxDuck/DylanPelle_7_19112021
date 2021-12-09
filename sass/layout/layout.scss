@@ -3,15 +3,13 @@
     .inputSearchRow {
         flex-direction: column !important;
 
-        .advanced-search {
+        .advanced-search,
+        .advanced-search.active {
             margin-right: unset;
-            max-width: 98% !important;
-
-            &.active {
-                margin-right: unset;
-            }
+            width: 100% !important;
+            max-width: unset;
+            margin-right: unset;
         }
-
         .advanced-search,
         .dropdown {
             margin-right: unset;
@@ -36,6 +34,7 @@
         }
     }
 }
+
 @media screen and (min-width: 989px) {
     .card-deck {
         .card {
@@ -44,5 +43,10 @@
             // margin: auto;
             margin-bottom: 30px;
         }
+    }
+}
+@media screen and (max-width: 400px) {
+    * {
+        font-size: 0.7rem;
     }
 }
