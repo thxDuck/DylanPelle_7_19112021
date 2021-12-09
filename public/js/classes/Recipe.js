@@ -10,23 +10,6 @@ export default class Recipe {
 		this.ustensils = ustensils;
 	}
 
-	getUnit(unit = "") {
-		if (!unit) return unit;
-		switch (unit) {
-			case "grammes":
-				return "g";
-			case "cuillères à soupe":
-				return "c. à s";
-			case "cuillère à soupe":
-				return "c. à s";
-			case "cuillères à café":
-				return "c. à s";
-			case "cuillère à café":
-				return "c. à s";
-			default:
-				return unit;
-		}
-	}
 	getDescritpionPreview() {
 		let description = this.description;
 		let preview = "";
@@ -42,6 +25,7 @@ export default class Recipe {
 		}
 		return preview;
 	}
+
 	createCard() {
 		let ingredientList = "";
 		let ingredientDatas = this.ingredients;
@@ -75,11 +59,6 @@ export default class Recipe {
 			</div>`;
 		let result = stringToHTML(content);
 		return result;
-		function stringToHTML(str) {
-			let parser = new DOMParser();
-			let html = parser.parseFromString(str, "text/html");
-			return html.body.firstChild;
-		}
 	}
 
 	// GETTERS
@@ -95,4 +74,27 @@ export default class Recipe {
 	getServings() {
 		return this.servings.toString();
 	}
+	getUnit(unit = "") {
+		if (!unit) return unit;
+		switch (unit) {
+			case "grammes":
+				return "g";
+			case "cuillères à soupe":
+				return "c. à s";
+			case "cuillère à soupe":
+				return "c. à s";
+			case "cuillères à café":
+				return "c. à s";
+			case "cuillère à café":
+				return "c. à s";
+			default:
+				return unit;
+		}
+	}
+
 }
+const stringToHTML = (str) => {
+	let parser = new DOMParser();
+	let html = parser.parseFromString(str, "text/html");
+	return html.body.firstChild;
+};

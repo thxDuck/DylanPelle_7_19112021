@@ -1745,6 +1745,52 @@ const DATAS = [
 		appliance: "Four",
 		ustensils: ["rouleau à patisserie", "fouet"],
 	},
+	{
+		id: 404,
+		name: "Brownie chocolat coco",
+		servings: 10,
+		ingredients: [
+			{
+				ingredient: "Noix",
+				quantity: "180",
+				unit: "grammes",
+			},
+			{
+				ingredient: "Noix de",
+				quantity: 150,
+				unit: "grammes",
+			},
+			{
+				ingredient: "Chocolat noir",
+				quantity: 150,
+				unit: "grammes",
+			},
+			{
+				ingredient: "Beurre",
+				quantity: 120,
+				unit: "grammes",
+			},
+			{
+				ingredient: "Oeuf",
+				quantity: 2,
+			},
+			{
+				ingredient: "Sucre en Poudre",
+				quantity: "110",
+				unit: "grammes",
+			},
+			{
+				ingredient: "farine",
+				quantity: 90,
+				unit: "grammes",
+			},
+		],
+		time: 60,
+		description:
+			"Hachez les noix grossièrement. Faire fondre le chocolat avec le beurre. Mélanger les oeuf et le sucre et mélanger au chocolat. Ajouter la farine. Mélanger afin d'avoir quelque chose d'homogène puis incorporer les noix. Verser la préparation dans un moule de préférence rectangulaire. Cuire 2O à 25 minutes à 180°. Sortez du four et attendez quelques minutes pour démouler. Servir avec une boule de glace pour plus de gourmandise.",
+		appliance: "Four",
+		ustensils: ["moule à gateaux", "casserolle"],
+	},
 ];
 
 export default class modelData {
@@ -1803,7 +1849,7 @@ export default class modelData {
 				for (let j = 0; j < DATAS[i].ustensils.length; j++) {
 					if (inResult.indexOf(DATAS[i].ustensils[j].toLowerCase()) === -1) {
 						result.push({
-							type: "ustensils",
+							type: "ustensil",
 							name: DATAS[i].ustensils[j].toLowerCase(),
 						});
 						inResult.push(DATAS[i].ustensils[j].toLowerCase());

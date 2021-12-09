@@ -59,25 +59,27 @@ nav .input-group-append span {
   color: #2caf72;
 }
 
-#ustensils .advanced-search__input input, #ustensils .advanced-search__input--icon {
+#ustensil .advanced-search__input input, #ustensil .advanced-search__input--icon {
   background-color: #ED6454;
   border-color: #ED6454;
 }
-#ustensils .dropdown {
+#ustensil .dropdown {
   background-color: #ED6454 !important;
 }
-#ustensils .dropdown .dropdownList a:hover,
-#ustensils .dropdown .dropdownList a:focus {
+#ustensil .dropdown .dropdownList a:hover,
+#ustensil .dropdown .dropdownList a:focus {
   color: #c62715;
 }
 
 .advanced-search {
-  margin-right: 25px;
   margin-bottom: 25px;
-  max-width: 200px;
+  max-width: 20%;
   display: flex;
   flex-direction: column;
   transition: all 0.3s;
+}
+.advanced-search:not(:last-child) {
+  margin-right: 25px;
 }
 .advanced-search__input {
   display: flex;
@@ -91,7 +93,7 @@ nav .input-group-append span {
   border-radius: 5px 0px 0px 5px;
 }
 .advanced-search__input input:focus {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 .advanced-search__input input:focus::placeholder {
   color: rgba(255, 255, 255, 0.8);
@@ -107,7 +109,7 @@ nav .input-group-append span {
   cursor: pointer;
 }
 .advanced-search__input--icon:focus {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 .advanced-search__input--icon:focus::placeholder {
   color: rgba(255, 255, 255, 0.8);
@@ -117,8 +119,9 @@ nav .input-group-append span {
 }
 .advanced-search .dropdown {
   display: none;
-  transition: all 0.3s;
+  transition: all 0.3s reverse;
   background-color: #fff;
+  animation: appear-animate 0.3s reverse;
 }
 .advanced-search .dropdown .fa-chevron-down {
   animation: rotate_dropdown_btn 0.5s reverse forwards;
@@ -137,8 +140,8 @@ nav .input-group-append span {
   overflow: hidden;
 }
 .advanced-search.active {
-  max-width: 45%;
-  margin-right: 25px;
+  max-width: fit-content;
+  width: 54%;
 }
 .advanced-search.active .btn-toogle-dropdown {
   display: none;
@@ -149,10 +152,15 @@ nav .input-group-append span {
 .advanced-search.active .dropdown {
   display: block;
   border-radius: 5px;
+  animation: appear-animate 0.3s;
 }
 .advanced-search.active .dropdown .dropdownList {
   animation: appear-animate 0.3s;
   opacity: 1;
+}
+.advanced-search.active .dropdown li {
+  width: 33%;
+  min-width: fit-content;
 }
 .advanced-search.active .dropdown a {
   color: #FFF;
@@ -160,6 +168,7 @@ nav .input-group-append span {
   padding: 5px;
   border-radius: 5px;
   text-transform: capitalize;
+  width: fit-content;
 }
 .advanced-search.active .dropdown a:hover, .advanced-search.active .dropdown a:focus {
   font-weight: bold;
@@ -248,7 +257,7 @@ nav .input-group-append span {
 .tags .tag--appliance {
   background-color: #68D9A4;
 }
-.tags .tag--ustensils {
+.tags .tag--ustensil {
   background-color: #ED6454;
 }
 .tags .tag i {
@@ -271,11 +280,11 @@ nav .input-group-append span {
   .inputSearchRow {
     flex-direction: column !important;
   }
-  .inputSearchRow .advanced-search {
+  .inputSearchRow .advanced-search,
+.inputSearchRow .advanced-search.active {
     margin-right: unset;
-    max-width: 98% !important;
-  }
-  .inputSearchRow .advanced-search.active {
+    width: 100% !important;
+    max-width: unset;
     margin-right: unset;
   }
   .inputSearchRow .advanced-search,
@@ -300,6 +309,11 @@ nav .input-group-append span {
     min-width: 30%;
     max-width: 30%;
     margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 400px) {
+  * {
+    font-size: 0.7rem;
   }
 }
 html {

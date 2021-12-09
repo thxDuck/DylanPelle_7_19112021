@@ -70,32 +70,35 @@ nav .input-group {
     }
 }
 
-#ustensils {
+#ustensil {
     .advanced-search {
         &__input {
 
             input,
             &--icon {
-                background-color: $ustensils-bg;
-                border-color: $ustensils-bg;
+                background-color: $ustensil-bg;
+                border-color: $ustensil-bg;
             }
         }
     }
 
     .dropdown {
-        background-color: $ustensils-bg !important;
+        background-color: $ustensil-bg !important;
 
         .dropdownList a:hover,
         .dropdownList a:focus {
-            color: darken($color: $ustensils-bg, $amount: 20);
+            color: darken($color: $ustensil-bg, $amount: 20);
         }
     }
 }
 
 .advanced-search {
-    margin-right: 25px;
+    &:not(:last-child) {
+        margin-right: 25px;
+    }
+
     margin-bottom: 25px;
-    max-width: 200px;
+    max-width: 20%;
     display: flex;
     flex-direction: column;
     transition: all .3s;
@@ -123,8 +126,10 @@ nav .input-group {
 
     .dropdown {
         display: none;
-        transition: all .3s;
+        transition: all .3s reverse;
         background-color: #fff;
+
+        animation: appear-animate .3s reverse;
 
         .fa-chevron-down {
             animation: rotate_dropdown_btn 0.5s reverse forwards;
@@ -147,8 +152,8 @@ nav .input-group {
     }
 
     &.active {
-        max-width: 45%;
-        margin-right: 25px;
+        max-width: fit-content;
+        width: 54%;
 
         .btn-toogle-dropdown {
             display: none;
@@ -161,10 +166,15 @@ nav .input-group {
         .dropdown {
             display: block;
             border-radius: 5px;
-
+            animation: appear-animate .3s;
             .dropdownList {
                 animation: appear-animate .3s;
                 opacity: 1;
+            }
+
+            li {
+                width: 33%;
+                min-width: fit-content
 
             }
 
@@ -174,6 +184,7 @@ nav .input-group {
                 padding: 5px;
                 border-radius: 5px;
                 text-transform: capitalize;
+                width: fit-content;
 
                 &:hover,
                 &:focus {
@@ -181,11 +192,11 @@ nav .input-group {
                 }
             }
         }
+
+
+
     }
 }
-
-
-
 
 .card {
     &-body {
@@ -297,8 +308,8 @@ nav .input-group {
             background-color: $appliance-bg;
         }
 
-        &--ustensils {
-            background-color: $ustensils-bg;
+        &--ustensil {
+            background-color: $ustensil-bg;
         }
 
         i {
@@ -306,6 +317,7 @@ nav .input-group {
             margin-left: 10px;
             cursor: pointer;
             transition: all .3s;
+
             :hover {
                 transform: scale(1.1);
             }

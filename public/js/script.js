@@ -23,3 +23,9 @@ for (let i = 0; i < TRIGGER_DROPDOWN.length; i++) {
 		}
 	});
 }
+U.get("#global-search").addEventListener("click", () => {
+	if (!!activeDropdown) {
+		activeDropdown.classList.remove("active");
+		activeDropdown = null;
+	}
+});

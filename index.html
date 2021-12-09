@@ -60,35 +60,35 @@
 						</span>
 						<div class="dropdown">
 							<span class="dropdown__input advanced-search__input">
-								<input type="text" class="form-control advanced-search__input--btn" placeholder="Ingrédients" aria-label="Ingrédients" />
+								<input type="text" class="form-control advanced-search__input--btn input-tag" data-type="ingredient" placeholder="Ingrédients" aria-label="Ingrédients" />
 								<span class="advanced-search__input--icon replyDropBox"><i class="fa fa-chevron-down replyDropBox"></i></span>
 							</span>
-							<ul class="dropdownList tags-selectable"></ul>
+							<ul class="dropdownList tags-selectable row"></ul>
 						</div>
 					</div>
 
 					<div class="advanced-search activeOnClick" id="appliance">
 						<span class="advanced-search__input btn-toogle-dropdown">
-							<input type="text" class="form-control advanced-search__input--btn" value="Appareils" placeholder="Appareils" aria-label="Appareils" />
+							<input type="text" class="form-control advanced-search__input--btn" name="advanced-search-appliance" value="Appareils" placeholder="Appareils" aria-label="Appareils" />
 							<span class="advanced-search__input--icon"><i class="fa fa-chevron-down"></i></span>
 						</span>
 						<div class="dropdown">
 							<span class="dropdown__input advanced-search__input">
-								<input type="text" class="form-control advanced-search__input--btn" placeholder="Appareils" aria-label="Appareils" />
+								<input type="text" class="form-control advanced-search__input--btn input-tag" data-type="appliance" placeholder="Appareils" aria-label="Appareils" />
 								<span class="advanced-search__input--icon replyDropBox"><i class="fa fa-chevron-down replyDropBox"></i></span>
 							</span>
 							<ul class="dropdownList tags-selectable"></ul>
 						</div>
 					</div>
 
-					<div class="advanced-search activeOnClick" id="ustensils">
+					<div class="advanced-search activeOnClick" id="ustensil">
 						<span class="advanced-search__input btn-toogle-dropdown">
 							<input type="text" class="form-control advanced-search__input--btn" value="" placeholder="Ustensiles" aria-label="Ustensiles" />
 							<span class="advanced-search__input--icon"><i class="fa fa-chevron-down"></i></span>
 						</span>
 						<div class="dropdown">
 							<span class="dropdown__input advanced-search__input">
-								<input type="text" class="form-control advanced-search__input--btn" placeholder="Ustensiles" aria-label="Ustensiles" />
+								<input type="text" class="form-control advanced-search__input--btn input-tag" data-type="ustensil" placeholder="Ustensiles" aria-label="Ustensiles" />
 								<span class="advanced-search__input--icon replyDropBox"><i class="fa fa-chevron-down replyDropBox"></i></span>
 							</span>
 							<ul class="dropdownList tags-selectable"></ul>
@@ -100,7 +100,6 @@
 			<section>
 				<h2 class="d-none">Recettes</h2>
 				<div class="card-deck recipe-list" id="recipe-list"></div>
-
 				<div id="noRecipe">
 					<div class="alert alert-info mx-auto" role="alert">
 						Aucune recette ne correspond à votre critère...<br />
@@ -114,5 +113,6 @@
 		<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script> -->
 		<script type="module" src="public/js/script.js"></script>
+		<script type="module" src="public/js/controller/searchEngine.js"></script>
 	</body>
 </html>
