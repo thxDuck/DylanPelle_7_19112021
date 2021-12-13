@@ -126,7 +126,7 @@ nav .input-group {
 
     .dropdown {
         display: none;
-        transition: all .3s reverse;
+        transition: all .3s;
         background-color: #fff;
 
         animation: appear-animate .3s reverse;
@@ -152,6 +152,8 @@ nav .input-group {
     }
 
     &.active {
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
         max-width: fit-content;
         width: 54%;
 
@@ -160,20 +162,25 @@ nav .input-group {
         }
 
         .fa-chevron-down.replyDropBox {
-            animation: rotate_dropdown_btn 0.5s forwards;
+            -webkit-animation: rotate_dropdown_btn 0.5s forwards;
+                    animation: rotate_dropdown_btn 0.5s forwards;
         }
 
         .dropdown {
             display: block;
             border-radius: 5px;
-            animation: appear-animate .3s;
+            -webkit-animation: appear-animate .3s;
+                    animation: appear-animate .3s;
             .dropdownList {
-                animation: appear-animate .3s;
+                -webkit-animation: appear-animate .3s;
+                        animation: appear-animate .3s;
                 opacity: 1;
             }
 
             li {
                 width: 33%;
+                min-width: -webkit-fit-content;
+                min-width: -moz-fit-content;
                 min-width: fit-content
 
             }
@@ -184,6 +191,8 @@ nav .input-group {
                 padding: 5px;
                 border-radius: 5px;
                 text-transform: capitalize;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
                 width: fit-content;
 
                 &:hover,
@@ -219,13 +228,15 @@ nav .input-group {
                 font-size: 1.25rem;
                 line-height: 1.2;
                 margin-bottom: .75rem;
+                min-width: -webkit-fit-content;
+                min-width: -moz-fit-content;
                 min-width: fit-content;
 
                 .fa-clock {
                     margin-top: auto;
                     margin-bottom: auto;
                     margin-right: 5px;
-                    scale: 1.1;
+                    transform: scale(1.1);
                 }
 
                 .time {
@@ -255,11 +266,11 @@ nav .input-group {
                         transition: opacity 1.3s;
 
                         span {
+                            width: -webkit-fit-content;
+                            width: -moz-fit-content;
                             width: fit-content;
-                            word-wrap: none;
                             overflow: visible;
 
-                            // margin-right: 5px;
                             &:first-child {
                                 margin-right: 5px;
                             }
@@ -276,7 +287,6 @@ nav .input-group {
             .description {
                 max-width: 40%;
                 word-wrap: normal;
-
 
             }
 

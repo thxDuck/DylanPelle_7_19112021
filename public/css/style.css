@@ -119,7 +119,7 @@ nav .input-group-append span {
 }
 .advanced-search .dropdown {
   display: none;
-  transition: all 0.3s reverse;
+  transition: all 0.3s;
   background-color: #fff;
   animation: appear-animate 0.3s reverse;
 }
@@ -140,6 +140,8 @@ nav .input-group-append span {
   overflow: hidden;
 }
 .advanced-search.active {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   width: 54%;
 }
@@ -147,19 +149,24 @@ nav .input-group-append span {
   display: none;
 }
 .advanced-search.active .fa-chevron-down.replyDropBox {
+  -webkit-animation: rotate_dropdown_btn 0.5s forwards;
   animation: rotate_dropdown_btn 0.5s forwards;
 }
 .advanced-search.active .dropdown {
   display: block;
   border-radius: 5px;
+  -webkit-animation: appear-animate 0.3s;
   animation: appear-animate 0.3s;
 }
 .advanced-search.active .dropdown .dropdownList {
+  -webkit-animation: appear-animate 0.3s;
   animation: appear-animate 0.3s;
   opacity: 1;
 }
 .advanced-search.active .dropdown li {
   width: 33%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
   min-width: fit-content;
 }
 .advanced-search.active .dropdown a {
@@ -168,6 +175,8 @@ nav .input-group-append span {
   padding: 5px;
   border-radius: 5px;
   text-transform: capitalize;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .advanced-search.active .dropdown a:hover, .advanced-search.active .dropdown a:focus {
@@ -192,13 +201,15 @@ nav .input-group-append span {
   font-size: 1.25rem;
   line-height: 1.2;
   margin-bottom: 0.75rem;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
   min-width: fit-content;
 }
 .card-body__heading .cooktime .fa-clock {
   margin-top: auto;
   margin-bottom: auto;
   margin-right: 5px;
-  scale: 1.1;
+  transform: scale(1.1);
 }
 .card-body__heading .cooktime .time {
   display: flex;
@@ -224,8 +235,9 @@ nav .input-group-append span {
   transition: opacity 1.3s;
 }
 .card-body__text .ingredient-list ul li span {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
-  word-wrap: none;
   overflow: visible;
 }
 .card-body__text .ingredient-list ul li span:first-child {

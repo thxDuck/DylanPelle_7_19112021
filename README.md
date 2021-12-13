@@ -15,10 +15,12 @@ The strength of the site should be the fluidity of the search, as the site will 
 - __Structure__
     - [x] Create interface of website according to the mock-ups, make sure the website is responsive on mobile and desktop.
     - [x] Add javascript for dropdown menus
-    - [ ] Create animation for smooth display
-    - [ ] No errors with W3C Validators (take screenshot)
+    - [x] No errors with W3C Validators (take screenshot)
 
 - __Research__
-    - [ ] Create 2 version of algorithm of principal research field
-    - [ ] Implement algorithms on two separate branches (Can use once algorithm for tag-research)
-    - [ ] Benchmark both algorithms and find the most efficient with jsBench.js
+    - [x] Create 2 version of algorithm of principal research field
+    - [x] Implement algorithms on two separate branches (Can use once algorithm for tag-research)
+    - [x] Benchmark both algorithms and find the most efficient with jsBench.js
+
+HTML validator https://gyazo.com/d5c57c086ec241e85109684e07c72aa3
+CSS validator https://gyazo.com/bb14fe48a540811b7a6fc1e33e1f4864
