@@ -103,6 +103,7 @@ const searchInTags = (valueSearch, tagType) => {
 	if (!!ALLTAGS[tagType] && ALLTAGS[tagType].length > 0) {
 		ALLTAGS[tagType].forEach(tag => {
 			if (tag.type != tagType) return
+			if (!isTagInRecipeList(tag.name, tag.type)) return
 			let nbOccurences = 0;
 
 			valueSearch.split(" ").forEach(wordSearch => {
@@ -171,7 +172,7 @@ const updateRecipeListWithTag = () => {
 					} else if (tag.type == "ustensil") {
 						if (!!recipe.ustensils && recipe.ustensils.length > 0) {
 							recipe.ustensils.forEach(ustensil => {
-								if (ustensil === tag.name) {
+								if (ustensil.toLowerCase() === tag.name) {
 									nbTagFound++;
 									return;
 								}
@@ -297,6 +298,67 @@ const updateTags = () => {
 const isTagSelected = (tagName, tagType) => {
 	tagName = tagName.toLowerCase();
 	return !!U.get('.tagSelected[data-name="' + tagName + '"][data-type="' + tagType + '"]');
+};
+
+const isTagInRecipeList = (tagName, tagType) => {
+	tagName = tagName.toLowerCase();
+	tagType = tagType.toLowerCase();
+	let isTagPresent = false;
+	if (isTagSelected(tagName, tagType)) return false;
+
+	if (!!RECIPES_DISPLAYED && RECIPES_DISPLAYED.length > 0) {
+		switch (tagType) {
+			case "ingredient":
+				RecipeLoop: {
+					for (let i = 0; i < RECIPES_DISPLAYED.length; i++) {
+						const recipe = RECIPES_DISPLAYED[i];
+						if (!!recipe.ingredients && recipe.ingredients.length > 0) {
+							for (let j = 0; j < recipe.ingredients.length; j++) {
+								const ingredient = recipe.ingredients[j].ingredient.toLowerCase();
+
+								if (ingredient === tagName) {
+									isTagPresent = true;
+									break RecipeLoop;
+								}
+							}
+						}
+					}
+				}
+
+				break;
+			case "appliance":
+				RecipeLoop: {
+					for (let i = 0; i < RECIPES_DISPLAYED.length; i++) {
+						const recipe = RECIPES_DISPLAYED[i];
+						if (recipe.appliance.toLowerCase() === tagName) {
+							isTagPresent = true;
+							break RecipeLoop;
+						}
+					}
+				}
+				break;
+			case "ustensil":
+				RecipeLoop: {
+					for (let i = 0; i < RECIPES_DISPLAYED.length; i++) {
+						const recipe = RECIPES_DISPLAYED[i];
+						if (!!recipe.ustensils && recipe.ustensils.length > 0) {
+							for (let u = 0; u < recipe.ustensils.length; u++) {
+								const ustensil = recipe.ustensils[u].toLowerCase();
+
+								if (ustensil.indexOf(tagName) > -1) {
+									isTagPresent = true;
+									break RecipeLoop;
+								}
+							}
+						}
+					}
+				}
+				break;
+			default:
+				break;
+		}
+	}
+	return isTagPresent;
 };
 
 const displayTag = (tag) => {
